@@ -17,6 +17,15 @@ while (isSunk == false) {
 
         if (guess == location1 || guess == location2 || guess == location3) {
             hits = hits + 1;
+
+            if (hits == 3) {
+                isSunk = true;
+                alert("You've just sunk my battleship! I hate you!");
+            }
         }
     }
 }
+
+var stats = "You needed " + guesses + " hits to put my battleship in the bottom of the ocean, " + "so your efficiency is: " + (3/guesses) ".";
+
+alert(stats);
