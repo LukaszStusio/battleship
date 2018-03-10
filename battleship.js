@@ -9,5 +9,10 @@ var guesses = 0;
 var isSunk = false;
 
 while (isSunk == false) {
-    guess = prompt("Ready, steady, fire! (choose the number from 0 to 6):")
+    guess = prompt("Ready, steady, fire! (choose the number from 0 to 6):");
+    if (guess<0 || guess>6){
+        alert("Please choose the correct number of cell!");
+    }else {
+        guesses = guesses + 1;
+    }
 }
