@@ -8,10 +8,10 @@ var guesses = 0;
 
 var isSunk = false;
 
-while (isSunk == false) {
+while (!isSunk) {
   //alert("test");
     guess = prompt("Ready, steady, fire! (choose the number from 0 to 6):");
-    if (guess<0 || guess>6){
+    if (guess<0 || guess>6 || guess == null){
         alert("Please choose the correct number of cell!");
     }else {
         guesses = guesses + 1;
@@ -19,11 +19,18 @@ while (isSunk == false) {
         if (guess == location1 || guess == location2 || guess == location3) {
             alert("Hit!!!");
             hits = hits + 1;
+
+            // if (guess == location1){
+            //     alert("Hit!!!");
+            //     hits = hits +1;
+            //     location1 = "You've already destroyed this part! Try again in different part.";
+            // }
+
             if (hits == 3) {
                 isSunk = true;
                 alert("You've just sunk my battleship! I hate you!");
             }
-        }else{
+        }else {
             alert("Missed!");
         }
     }
